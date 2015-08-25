@@ -17,13 +17,18 @@ cvcompute = function(mat, foldid, nlams) {
   mat[is.infinite(mat)] = NA
   for (i in seq(nfolds)) {
     mati = mat[foldid == i, ]
-    outmat[i, ] = apply(mati, 2, mean, na.rm = TRUE)
+    outmat[i, ] = colMeans(mati, na.rm=TRUE)
     good[i, seq(nlams[i])] = 1
   }
   N = colSums(good)
   list(cvraw = outmat, N = N)
 }
- 
+
+dwdloss = function(u) {
+  ## DWD loss
+  ifelse(u > 0.5, 0.25/u, 1 - u )
+}
+
 err = function(n, maxit, pmax) {
   if (n == 0) 
     msg = ""

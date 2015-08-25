@@ -39,23 +39,23 @@ plot.sdwd = function(x, xvar=c("norm", "lambda"),
   switch(xvar, 
     norm = {
       index = colSums(abs(beta))
-      iname = "L1 Norm"
+      iname = "l1 norm"
            }, 
     lambda = {
       index = log(lambda)
-      iname = "Log Lambda"
+      iname = "log lambda"
            }
   )
   xlab = iname
-  ylab = "Coefficients"
+  ylab = "coefficients"
   dotlist = list(...)
   type = dotlist$type
   if (is.null(type)) {
     if (color == FALSE) 
       matplot(index, t(beta), lty=1, xlab=xlab, ylab=ylab, 
-              type="l", pch=500, 
-              col=gray.colors(12, start=0.05, 
-                  end=0.7, gamma=2.2), ...) else matplot(index, 
+        type="l", pch=500, 
+        col=gray.colors(12, start=0.05, 
+        end=0.7, gamma=2.2), ...) else matplot(index, 
       t(beta), lty=1, xlab=xlab, ylab=ylab, 
       type="l", pch=500, ...)
   } else matplot(index, t(beta), lty=1, xlab=xlab, ylab=ylab, ...)
