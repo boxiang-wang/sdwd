@@ -9,8 +9,8 @@
 ##    URL http://www.jstatsoft.org/v33/i01/.
 
 cvcompute = function(mat, foldid, nlams) {
-  ## Computes the weighted mean and SD within folds, and
-  #   hence the se of the mean
+  ## computes the weighted mean and SD within folds, and
+  ##   hence the standard error of the mean
   nfolds = max(foldid)
   outmat = matrix(NA, nfolds, ncol(mat))
   good = matrix(0, nfolds, ncol(mat))

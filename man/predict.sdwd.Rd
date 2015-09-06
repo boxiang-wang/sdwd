@@ -11,10 +11,10 @@ This function predicts the binary class labels or the fitted values of an \code{
 }
 
 \arguments{
-		\item{object}{A fitted \code{\link{sdwd}} object.}
-		\item{newx}{A matrix of new values for \code{x} at which predictions are to be made. We note that \code{newx} must be a matrix, \code{predict} function does not accept a vector or other formats of \code{newx}.}
+    \item{object}{A fitted \code{\link{sdwd}} object.}
+    \item{newx}{A matrix of new values for \code{x} at which predictions are to be made. We note that \code{newx} must be a matrix, \code{predict} function does not accept a vector or other formats of \code{newx}.}
     \item{s}{Value(s) of the L1 tuning parameter \code{lambda} for computing coefficients. Default is the entire \code{lambda} sequence obtained by \code{\link{sdwd}}.}
-		\item{type}{\code{"class"} or \code{"link"}? \code{"class"} produces the predicted binary class labels.\code{"link"} returns the fitted values. Default is \code{"class"}.}
+    \item{type}{\code{"class"} or \code{"link"}? \code{"class"} produces the predicted binary class labels.\code{"link"} returns the fitted values. Default is \code{"class"}.}
     \item{\dots}{Not used. Other arguments to \code{predict}.} 
 }
  
@@ -26,20 +26,18 @@ This function predicts the binary class labels or the fitted values of an \code{
 Maintainer: Boxiang Wang  \email{boxiang@umn.edu}}
 \references{
 Wang, B. and Zou, H. (2015)
-  ``Sparse Distance Weighted Discrimination", \emph{Journal of Computational and Graphical Statistics}, forthcoming. \cr
+  ``Sparse Distance Weighted Discrimination", \emph{Journal of Computational and Graphical Statistics}, forthcoming.\cr
   \url{http://arxiv.org/abs/1501.06066}\cr
   \cr
 Yang, Y. and Zou, H. (2013)
 ``An Efficient Algorithm for Computing the HHSVM and Its Generalizations", 
-  \emph{Journal of Computational and Graphical Statistics}, \bold{22}(2), 396--415\cr
+  \emph{Journal of Computational and Graphical Statistics}, \bold{22}(2), 396--415.\cr
   \url{http://users.stat.umn.edu/~yiyang/resources/papers/JCGS_gcdnet.pdf}\cr
  \cr 
 Friedman, J., Hastie, T., and Tibshirani, R. (2010), "Regularization paths for generalized
-linear models via coordinate descent," \emph{Journal of Statistical Software}, \bold{33}(1), 1--22\cr
+linear models via coordinate descent," \emph{Journal of Statistical Software}, \bold{33}(1), 1--22.\cr
 \url{http://www.jstatsoft.org/v33/i01/paper}
-\cr
-
- }
+}
  
 \seealso{\code{\link{coef.sdwd}}}
 \examples{
@@ -47,7 +45,3 @@ data(colon)
 fit = sdwd(colon$x, colon$y, lambda2=1)
 print(predict(fit ,type="class",newx=colon$x[2:5,]))
 }
-% Add one or more standard keywords, see file 'KEYWORDS' in the
-% R documentation directory.
-\keyword{models}
-\keyword{regression}

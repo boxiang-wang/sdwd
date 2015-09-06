@@ -25,7 +25,6 @@ print.sdwd = function(x, digits=max(3,
   print(cbind(Df=x$df, Lambda=signif(x$lambda, digits)))
 } 
 
-
 plot.sdwd = function(x, xvar=c("norm", "lambda"), 
     color=FALSE, label=FALSE, ...) {
   beta = x$beta

@@ -26,11 +26,11 @@ Wang, B. and Zou, H. (2015)
   \cr
 Yang, Y. and Zou, H. (2013)
 ``An Efficient Algorithm for Computing the HHSVM and Its Generalizations", 
-  \emph{Journal of Computational and Graphical Statistics}, \bold{22}(2), 396--415\cr
+  \emph{Journal of Computational and Graphical Statistics}, \bold{22}(2), 396--415.\cr
   \url{http://users.stat.umn.edu/~yiyang/resources/papers/JCGS_gcdnet.pdf}\cr
  \cr 
 Friedman, J., Hastie, T., and Tibshirani, R. (2010), "Regularization paths for generalized
-linear models via coordinate descent," \emph{Journal of Statistical Software}, \bold{33}(1), 1--22\cr
+linear models via coordinate descent," \emph{Journal of Statistical Software}, \bold{33}(1), 1--22.\cr
 \url{http://www.jstatsoft.org/v33/i01/paper}
 \cr
 }
@@ -42,6 +42,4 @@ data(colon)
 fit = sdwd(colon$x, colon$y)
 print(fit)
 }
-\keyword{models}
-\keyword{regression}
 
