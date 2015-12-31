@@ -13,7 +13,7 @@
 
 \details{This function computes the coefficients at the values of \code{lambda} suggested by the cross-validation. This function is modified based on the \code{coef.cv} function from the \code{glmnet} and the \code{gcdnet} packages.}
 
-\value{The object returned depends the choice of \code{s} and the \dots argument passed on to the \code{\link{sdwd}} method.}
+\value{The object returned depends the choice of \code{s} and the \code{\dots} argument passed on to the \code{\link{sdwd}} method.}
 \author{Boxiang Wang and Hui Zou\cr
 Maintainer: Boxiang Wang  \email{boxiang@umn.edu}}
 \references{Wang, B. and Zou, H. (2015)

@@ -60,11 +60,11 @@ Wang, B. and Zou, H. (2015)
   \url{http://arxiv.org/abs/1501.06066}\cr
   \cr
 Friedman, J., Hastie, T., and Tibshirani, R. (2010), "Regularization paths for generalized
-linear models via coordinate descent," \emph{Journal of Statistical Software}, \bold{33}(1), 1--22.\cr
+linear models via coordinate descent", \emph{Journal of Statistical Software}, \bold{33}(1), 1--22.\cr
 \url{http://www.jstatsoft.org/v33/i01/paper}\cr
 \cr
 Marron, J.S., Todd, M.J., and Ahn, J. (2007)
-``Distance-Weighted Discrimination"", 
+``Distance-Weighted Discrimination", 
   \emph{Journal of the American Statistical Association}, \bold{102}(408), 1267--1271.\cr
   \url{https://faculty.franklin.uga.edu/jyahn/sites/faculty.franklin.uga.edu.jyahn/files/DWD3.pdf}\cr
   \cr

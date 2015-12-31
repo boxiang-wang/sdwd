@@ -11,7 +11,7 @@ Computes the coefficients or returns the indices of nonzero coefficients at chos
     \item{object}{A fitted \code{\link{sdwd}} object.}
     \item{s}{Value(s) of the L1 tuning parameter \code{lambda} for computing coefficients. Default is the entire \code{lambda} sequence obtained by \code{\link{sdwd}}.}
     \item{type}{\code{"coefficients"} or \code{"nonzero"}? \code{"coefficients"} computes the coefficients at given values for \code{s}; \code{"nonzero"} returns a list of the indices of the nonzero coefficients for each value of \code{s}. Default is \code{"coefficients"}.}
-    \item{\dots}{Not used. Other arguments to predict. } 
+    \item{\dots}{Not used. Other arguments to \code{predict}. } 
 }
 
 \details{
