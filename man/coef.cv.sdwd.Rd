@@ -1,4 +1,5 @@
 \name{coef.cv.sdwd}
+\alias{coef.cv.sdwd}
 \title{compute coefficients from a "cv.sdwd" object}
 \description{Computes coefficients at chosen values of \code{lambda} from the \code{\link{cv.sdwd}} object. 
 }
@@ -13,17 +14,17 @@
 
 \details{This function computes the coefficients at the values of \code{lambda} suggested by the cross-validation. This function is modified based on the \code{coef.cv} function from the \code{glmnet} and the \code{gcdnet} packages.}
 
-\value{The object returned depends the choice of \code{s} and the \code{\dots} argument passed on to the \code{\link{sdwd}} method.}
+\value{The returned object depends on the choice of \code{s} and the \code{\dots} argument passed on to the \code{\link{sdwd}} method.}
 \author{Boxiang Wang and Hui Zou\cr
-Maintainer: Boxiang Wang  \email{boxiang@umn.edu}}
-\references{Wang, B. and Zou, H. (2015)
-  ``Sparse Distance Weighted Discrimination", \emph{Journal of Computational and Graphical Statistics}, forthcoming.\cr
-  \url{http://arxiv.org/abs/1501.06066}\cr
+Maintainer: Boxiang Wang  \email{boxiang-wang@uiowa.edu}}
+\references{Wang, B. and Zou, H. (2016)
+  ``Sparse Distance Weighted Discrimination", \emph{Journal of Computational and Graphical Statistics}, \bold{25}(3), 826--838.\cr
+  \url{https://www.tandfonline.com/doi/full/10.1080/10618600.2015.1049700}\cr
   \cr
 Yang, Y. and Zou, H. (2013)
 ``An Efficient Algorithm for Computing the HHSVM and Its Generalizations", 
   \emph{Journal of Computational and Graphical Statistics}, \bold{22}(2), 396--415.\cr
-  \url{http://users.stat.umn.edu/~yiyang/resources/papers/JCGS_gcdnet.pdf}\cr
+  \url{https://www.tandfonline.com/doi/full/10.1080/10618600.2012.680324}\cr
  \cr 
 Friedman, J., Hastie, T., and Tibshirani, R. (2010), "Regularization paths for generalized
 linear models via coordinate descent," \emph{Journal of Statistical Software}, \bold{33}(1), 1--22.\cr

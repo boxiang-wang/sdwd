@@ -1,7 +1,7 @@
 \name{sdwd}
 \alias{sdwd}
 \title{fit the sparse DWD}
-\description{Fits the sparse distance weighted discrimination (DWD) model with imposing L1, elastic-net, or adaptive elastic-net penalties. The solution path is computed at a grid of values of tuning parameter \code{lambda}. This function is modified based on the \code{glmnet} and the \code{gcdnet} packages.}
+\description{Fits the sparse distance weighted discrimination (SDWD) model with imposing L1, elastic-net, or adaptive elastic-net penalties. The solution path is computed at a grid of values of tuning parameter \code{lambda}. This function is modified based on the \code{glmnet} and the \code{gcdnet} packages.}
 \usage{
 sdwd(x, y, nlambda=100, 
      lambda.factor=ifelse(nobs < nvars, 0.01, 1e-04), 
@@ -15,7 +15,7 @@ sdwd(x, y, nlambda=100,
     \item{y}{A vector of length \eqn{p} for binary responses. The element of \code{y} is either -1 or 1.}
     \item{nlambda}{The number of \code{lambda} values, i.e., length of the \code{lambda} sequence. Default is 100.}
     \item{lambda.factor}{The ratio of the smallest to the largest \code{lambda} in the sequence: \code{lambda.factor} = \code{min(lambda)} / \code{max(lambda)}.  \code{max(lambda)} is the least \code{lambda} to make all coefficients to be zero. The default value of \code{lambda.factor} is 0.0001 if \eqn{N >= p} or 0.01 if \eqn{N < p}. Takes no effect when user specifies a \code{lambda} sequence.} 
-    \item{lambda}{An optional user supplied \code{lambda} sequence. If \code{lambda = NULL} (default), the program computes its own \code{lambda} sequence based on \code{nlambda} and \code{lambda.factor}; otherwise, the program uses the user-specified one. Since the program will automatically sort user-defined \code{lambda} sequence in decreasing order, it is better to supply a decreasing sequence.}
+    \item{lambda}{An optional user-supplied \code{lambda} sequence. If \code{lambda = NULL} (default), the program computes its own \code{lambda} sequence based on \code{nlambda} and \code{lambda.factor}; otherwise, the program uses the user-specified one. Since the program will automatically sort user-defined \code{lambda} sequence in decreasing order, it is better to supply a decreasing sequence.}
     \item{lambda2}{The L2 tuning parameter \eqn{\lambda_2}{lambda2}.}
     \item{pf}{A vector of length \eqn{p}{p} representing the L1 penalty weights to each coefficient of \eqn{\beta}{beta} for adaptive L1 or adaptive elastic net. \code{pf} can be 0 for some predictor(s), leading to including the predictor(s) all the time. One suggested choice of \code{pf} is \eqn{{(\beta + 1/n)}^{-1}}{1/(beta+1/n)}, where \eqn{n} is the sample size and \eqn{\beta}{beta} is the coefficents obtained by L1 DWD or enet DWD. Default is 1 for all predictors (and infinity if some predictors are listed in \code{exclude}).}
     \item{pf2}{A vector of length \eqn{p}{p} for L2 penalty factor for adaptive L1 or adaptive elastic net. To allow different L2 shrinkage, user can set \code{pf2} to be different L2 penalty weights for each coefficient of \eqn{\beta}{beta}. \code{pf2} can be 0 for some variables, indicating no L2 shrinkage. Default is 1 for all predictors.}
@@ -53,11 +53,11 @@ An object with S3 class \code{\link{sdwd}}.
 }
 
 \author{Boxiang Wang and Hui Zou\cr
-Maintainer: Boxiang Wang  \email{boxiang@umn.edu}}
+Maintainer: Boxiang Wang  \email{boxiang-wang@uiowa.edu}}
 \references{
-Wang, B. and Zou, H. (2015)
-  ``Sparse Distance Weighted Discrimination", \emph{Journal of Computational and Graphical Statistics}, forthcoming. \cr
-  \url{http://arxiv.org/abs/1501.06066}\cr
+Wang, B. and Zou, H. (2016)
+  ``Sparse Distance Weighted Discrimination", \emph{Journal of Computational and Graphical Statistics}, \bold{25}(3), 826--838.\cr
+  \url{https://www.tandfonline.com/doi/full/10.1080/10618600.2015.1049700}\cr
   \cr
 Friedman, J., Hastie, T., and Tibshirani, R. (2010), "Regularization paths for generalized
 linear models via coordinate descent", \emph{Journal of Statistical Software}, \bold{33}(1), 1--22.\cr
@@ -66,7 +66,7 @@ linear models via coordinate descent", \emph{Journal of Statistical Software}, \
 Marron, J.S., Todd, M.J., and Ahn, J. (2007)
 ``Distance-Weighted Discrimination", 
   \emph{Journal of the American Statistical Association}, \bold{102}(408), 1267--1271.\cr
-  \url{https://faculty.franklin.uga.edu/jyahn/sites/faculty.franklin.uga.edu.jyahn/files/DWD3.pdf}\cr
+  \url{https://www.tandfonline.com/doi/abs/10.1198/016214507000001120}\cr
   \cr
 Tibshirani, Robert., Bien, J., Friedman, J.,Hastie, T.,Simon,
   N.,Taylor, J., and Tibshirani, Ryan. (2012)
@@ -77,7 +77,7 @@ Tibshirani, Robert., Bien, J., Friedman, J.,Hastie, T.,Simon,
 Yang, Y. and Zou, H. (2013)
 ``An Efficient Algorithm for Computing the HHSVM and Its Generalizations", 
   \emph{Journal of Computational and Graphical Statistics}, \bold{22}(2), 396--415.\cr
-  \url{http://users.stat.umn.edu/~yiyang/resources/papers/JCGS_gcdnet.pdf}\cr
+  \url{https://www.tandfonline.com/doi/full/10.1080/10618600.2012.680324}\cr
  }
 
 \seealso{\code{print.sdwd}, \code{predict.sdwd}, \code{coef.sdwd}, \code{plot.sdwd}, and \code{cv.sdwd}.}
