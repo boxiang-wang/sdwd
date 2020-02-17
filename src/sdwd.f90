@@ -374,7 +374,7 @@
                IF (jx /= 0) CYCLE
 !---------- check the KKT conditions of the discarded variables--    
                CALL DWDdrv (nobs, nvars, x, y, r, vl)
-               ga = Abs (vl)
+               ga = Abs(vl)
                DO j = 1, nvars
                   IF (jxx(j) == 1) CYCLE
                   If (ga(j) > al * pf(j)) THEN
@@ -415,16 +415,19 @@
          IMPLICIT NONE
          INTEGER :: nobs, nvars, i
          DOUBLE PRECISION :: x (nobs, nvars), y (nobs)
-         DOUBLE PRECISION :: r (nobs), vl (nvars), dl (nobs)
+         DOUBLE PRECISION :: r (nobs), vl (nvars), dl (nobs), dly (nobs)
          vl = 0.0D0
          dl = 0.0D0
          DO i = 1, nobs
             IF (r(i) > 0.5D0) THEN
                dl(i) = -0.25D0 / (r(i) * r(i))
-               ELSE
-                  dl(i) = -1.0D0
-               ENDIF
+            ELSE
+               dl(i) = -1.0D0
+            ENDIF
          ENDDO
-         vl = Matmul(dl * y, x) / nobs
+         dly = dl * y
+         DO i = 1, nvars
+            vl(i) = Dot_product(dly, x(1:nobs, i))
+         ENDDO
       END SUBROUTINE DWDdrv
  
