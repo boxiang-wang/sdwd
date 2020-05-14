@@ -192,9 +192,6 @@
             flmin = Max (MFL, flmin)
             alf = flmin ** (1.0D0 / (nlam-1.0D0))
          ENDIF
-         vl = 0.0D0
-         CALL DWDdrv(nobs, nvars, x, y, r, vl)
-         ga = Abs (vl)
 
          loop_lambda: DO l = 1, nlam
             al0 = al
@@ -207,6 +204,9 @@
                   al = BIG
                ELSE IF (l == 2) THEN
                   al0 = 0.0D0
+                  vl = 0.0D0
+                  CALL DWDdrv(nobs, nvars, x, y, r, vl)
+                  ga = Abs (vl)
                   DO j = 1, nvars
                   IF (ju(j) /= 0) THEN
                      IF (pf(j) > 0.0D0) THEN
