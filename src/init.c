@@ -11,7 +11,7 @@ extern void F77_NAME(sdwdnet)(double *lam2, int *nobs, int *nvars, double *x, do
 extern void F77_NAME(sdwdnetpath)(double *lam2, double *maj, int *nobs, int *nvars, double *x, 
     double *y, int *ju, double *pf, double *pf2, int *dfmax, int *pmax, int *nlam, double *flmin, 
     double *ulam, double *eps, int *maxit, int *strong, int *nalam, double *b0, double *beta, 
-    int *ibeta, int *nbeta, double *alam, int *npass, int *jerr);
+    int *m, int *nbeta, double *alam, int *npass, int *jerr);
 extern void F77_NAME(standard)(int *nobs, int *nvars, double *x, int *ju, int *isd, double *xmean, 
     double *xnorm, double *maj);
 extern void F77_NAME(chkvars)(int *nobs, int *nvars, double *x, int *ju);

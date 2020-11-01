@@ -44,7 +44,7 @@
 !                variables locations and scales.
 !    maxit = maximum number of outer-loop iterations allowed at fixed lambda value. 
 !            (suggested values, maxit = 100000)
-!    strong = wheter to adopt the strong rule to accelerate the algorithm.
+!    strong = whether to adopt the strong rule to accelerate the algorithm.
 ! 
 ! OUTPUT:
 ! 
@@ -83,14 +83,13 @@
 
          IMPLICIT NONE
 !------- arg types ----------------------------------------------
-         INTEGER :: nobs, nvars, nlam, nalam, maxit, dfmax, pmax
+         INTEGER :: nobs, nvars, nlam, nalam, maxit, dfmax, pmax, strong
          INTEGER :: isd, npass, jerr, jd (*), ibeta (pmax), nbeta(nlam)
          DOUBLE PRECISION :: lam2, flmin, eps
          DOUBLE PRECISION :: x (nobs, nvars), y (nobs)
          DOUBLE PRECISION :: pf (nvars), pf2 (nvars)
          DOUBLE PRECISION :: ulam (nlam), alam (nlam)
          DOUBLE PRECISION :: beta (pmax, nlam), b0 (nlam)
-         LOGICAL :: strong
          
 !------- local declarations -------------------------------------
          INTEGER :: j, l, nk, ju (nvars)
@@ -145,21 +144,18 @@
          DOUBLE PRECISION, PARAMETER :: MFL = 1.0E-6
          INTEGER, PARAMETER :: MNLAM = 6
          INTEGER :: nobs, nvars, dfmax, pmax, nlam
-         INTEGER :: maxit, nalam, npass, jerr 
+         INTEGER :: maxit, strong, nalam, npass, jerr 
          INTEGER :: ju (nvars), m (pmax), nbeta (nlam)
          DOUBLE PRECISION :: lam2, flmin, eps
          DOUBLE PRECISION :: x (nobs, nvars), y (nobs)
          DOUBLE PRECISION :: pf (nvars), pf2 (nvars),  ulam (nlam)
          DOUBLE PRECISION :: beta (pmax, nlam), b0 (nlam)
          DOUBLE PRECISION :: alam (nlam), maj (nvars)
-         LOGICAL :: strong
-         
 !------- local declarations -------------------------------------
          DOUBLE PRECISION :: d, dif, oldb, u, v, al, alf
          DOUBLE PRECISION :: dl (nobs), r (nobs)
          DOUBLE PRECISION :: b (0:nvars), oldbeta (0:nvars)
          INTEGER :: i, k, j, l, ctr, ni, me, mnl, mm (nvars)
-
 !------- local declarations for the strong rule -----------------
          INTEGER :: jx, jxx (nvars)
          DOUBLE PRECISION :: tlam, ga (nvars), vl (nvars), al0
@@ -175,12 +171,14 @@
          ni = npass
          maj = maj * 4.0
          alf = 0.01D0
+         ga = 0.0D0
+         vl = 0.0D0
       
 ! strong rule
 !   jxx = 0 using the strong rule
 !   jxx = 1 not using the strong rule
          jxx = 0
-         IF (strong .EQV. .TRUE.) THEN
+         IF (strong .EQ. 1) THEN
             jxx = 0
          ELSE
             jxx = 1

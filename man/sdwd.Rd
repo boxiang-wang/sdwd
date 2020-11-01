@@ -8,7 +8,7 @@ sdwd(x, y, nlambda=100,
      lambda=NULL, lambda2=0, pf=rep(1, nvars), 
      pf2=rep(1, nvars), exclude, dfmax=nvars + 1, 
      pmax=min(dfmax * 1.2, nvars), standardize=TRUE, 
-     eps=1e-8, maxit=1e6, strong=T)
+     eps=1e-8, maxit=1e6, strong=TRUE)
 }
 \arguments{
     \item{x}{A matrix with \eqn{N} rows and \eqn{p} columns for predictors.}
