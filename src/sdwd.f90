@@ -412,10 +412,11 @@
       SUBROUTINE DWDdrv (nobs, nvars, x, y, r, vl)
          IMPLICIT NONE
          INTEGER :: nobs, nvars, i
-         DOUBLE PRECISION :: x (nobs, nvars), y (nobs)
+         DOUBLE PRECISION :: x (nobs, nvars), y (nobs), ninv
          DOUBLE PRECISION :: r (nobs), vl (nvars), dl (nobs), dly (nobs)
          vl = 0.0D0
          dl = 0.0D0
+         ninv = 1.0D0 / nobs
          DO i = 1, nobs
             IF (r(i) > 0.5D0) THEN
                dl(i) = -0.25D0 / (r(i) * r(i))
@@ -425,7 +426,7 @@
          ENDDO
          dly = dl * y
          DO i = 1, nvars
-            vl(i) = Dot_product(dly, x(1:nobs, i))
+            vl(i) = Dot_product(dly, x(1:nobs, i)) * ninv
          ENDDO
       END SUBROUTINE DWDdrv
  
