@@ -281,10 +281,10 @@
                   IF (ni > pmax) EXIT
                   d = 0.0D0
                   DO i = 1, nobs
-                        IF (r(i) > 0.5) THEN
-                           dl(i) = -0.25 / (r(i) * r(i))
-                        ELSE
-                           dl(i) = -1.0D0
+                     IF (r(i) > 0.5) THEN
+                        dl(i) = -0.25 / (r(i) * r(i))
+                     ELSE
+                        dl(i) = -1.0D0
                     ENDIF
                     d = d + dl(i) * y(i)
                   ENDDO

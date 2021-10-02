@@ -40,7 +40,7 @@ err = function(n, maxit, pmax) {
     if (n == 10000) 
       msg = "All penalty factors are <= 0"
     n = 1
-    msg = paste("in gcdnet fortran code -", msg)
+    msg = paste("in sdwd fortran code -", msg)
   }
   if (n < 0) {
     if (n > -10000) 
@@ -50,7 +50,7 @@ err = function(n, maxit, pmax) {
       msg = paste0("Number of nonzero coefficients along the path exceeds pmax=", 
           pmax, " at ", -n - 10000, "th lambda value; solutions for larger lambdas returned")
     n = -1
-    msg = paste("from gcdnet fortran code -", msg)
+    msg = paste("from sdwd fortran code -", msg)
   }
   list(n = n, msg = msg)
 }
